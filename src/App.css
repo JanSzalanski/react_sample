@@ -1,38 +1,115 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  color: gainsboro;
+  background-color: rgb(49, 54, 54);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.wrapper {
+  position: relative;
+  height: 100%;
+  width: 420px;
+  /* border: 1px solid black; */
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.App {
+  height: 100vh;
+  width: 100vw;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.rectangle {
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translateY(-50%);
+  width: 140px;
+  height: 60px;
+  border: 1px solid white;
+  border-radius: 10px;
+  /* background-color: red; */
+  transition: all 0.3s ease-out;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-duration: 0.2s;
+  animation-delay: 0.3s;
+}
+
+.rectangleBack {
+  width: 140px;
+  height: 46px;
+  background-color: rgb(44, 167, 126);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.animeA {
+  left: 0;
+  animation-name: anime;
+}
+.animeB {
+  left: 33%;
+  animation-name: animeBlink;
+}
+.animeC {
+  left: 67%;
+  animation-name: animeBlink2;
+}
+/* .anime {
+  animation-name: anime;
+} */
+
+@keyframes anime {
+  0% {
+    opacity: 1;
   }
-  to {
-    transform: rotate(360deg);
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes animeBlink {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes animeBlink2 {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes animeY {
+  0% {
+    transform: translate(0, -50%);
+  }
+  100% {
+    transform: translate(50px, -50%);
   }
 }
